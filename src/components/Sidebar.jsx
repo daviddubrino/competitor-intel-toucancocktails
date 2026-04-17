@@ -18,7 +18,7 @@ export default function Sidebar() {
 
   return (
     <div className="flex flex-col h-full">
-      <p className="px-4 pt-4 pb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+      <p className="px-4 pt-4 pb-2 text-xs font-semibold uppercase tracking-wider" style={{ color: '#7C7C7C', fontFamily: 'Oswald' }}>
         Competitors ({competitors.length})
       </p>
       <div className="flex-1 overflow-y-auto px-2 pb-4 space-y-0.5">
@@ -29,16 +29,19 @@ export default function Sidebar() {
             <Link
               key={c.id}
               to={`/competitor/${c.id}`}
-              className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors
-                ${active
-                  ? 'bg-slate-700 text-white'
-                  : 'text-slate-300 hover:bg-slate-800 hover:text-white'
-                }`}
+              className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors"
+              style={{
+                background: active ? '#2d2520' : 'transparent',
+                color: active ? '#FAF8F2' : '#929799',
+                fontFamily: 'Josefin Sans',
+              }}
+              onMouseEnter={e => { if (!active) { e.currentTarget.style.background = '#2d2520'; e.currentTarget.style.color = '#FAF8F2' }}}
+              onMouseLeave={e => { if (!active) { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#929799' }}}
             >
               <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: c.color }} />
               <span className="flex-1 truncate">{c.name}</span>
               {count > 0 && (
-                <span className="text-xs bg-slate-700 text-slate-300 rounded-full px-1.5 py-0.5 flex-shrink-0">
+                <span className="text-xs rounded-full px-1.5 py-0.5 flex-shrink-0" style={{ background: '#2d2520', color: '#929799' }}>
                   {count}
                 </span>
               )}

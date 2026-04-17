@@ -7,7 +7,23 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans:     ['Josefin Sans', 'system-ui', 'sans-serif'],
+        heading:  ['Oswald', 'system-ui', 'sans-serif'],
+        sub:      ['Josefin Sans', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        toucan: {
+          cream:   '#FAF8F2',
+          gray:    '#7C7C7C',
+          silver:  '#929799',
+          blush:   '#c8aa9d',
+          sky:     '#afd8ea',
+          yellow:  '#ffeea2',
+          peach:   '#fbab98',
+          coral:   '#ed7979',
+          dark:    '#1E1916',
+          darkHover: '#2d2520',
+        },
       },
     },
   },

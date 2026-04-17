@@ -6,9 +6,14 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #f8fafc;
-  color: #0f172a;
+  font-family: 'Josefin Sans', system-ui, sans-serif;
+  background: #FAF8F2;
+  color: #2d2520;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', system-ui, sans-serif;
+  letter-spacing: 0.01em;
 }
 
 /* Scrollbar styling */
