@@ -45,7 +45,7 @@ export default function CompetitorPage() {
   messages.forEach(m => { typeMap[m.campaignType] = (typeMap[m.campaignType] || 0) + 1 })
 
   return (
-    <div className="p-6 max-w-6xl">
+    <div className="p-4 md:p-6 max-w-6xl">
       {/* Back */}
       <button
         onClick={() => navigate(-1)}
@@ -57,39 +57,36 @@ export default function CompetitorPage() {
 
       {/* Competitor header */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-6">
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           <div
             className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-2xl flex-shrink-0"
             style={{ backgroundColor: comp.color }}
           >
             {comp.name[0]}
           </div>
-          <div>
-            <h1 className="text-2xl font-bold text-slate-900">{comp.name}</h1>
+          <div className="flex-1 min-w-0">
+            <h1 className="text-xl md:text-2xl font-bold" style={{ fontFamily: 'Oswald', color: '#2d2520' }}>{comp.name}</h1>
             <a
               href={comp.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-indigo-500 hover:text-indigo-700 flex items-center gap-1 mt-1"
+              className="text-sm flex items-center gap-1 mt-1"
+              style={{ color: '#ed7979', fontFamily: 'Josefin Sans' }}
             >
               <ExternalLink className="w-3.5 h-3.5" />
               {comp.domain}
             </a>
           </div>
-          <div className="ml-auto flex gap-3">
-            {messages.length > 0 ? (
-              <>
-                <span className="flex items-center gap-1.5 text-sm bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg">
-                  <Mail className="w-4 h-4" /> {emails} emails
-                </span>
-                <span className="flex items-center gap-1.5 text-sm bg-green-50 text-green-700 px-3 py-1.5 rounded-lg">
-                  <MessageSquare className="w-4 h-4" /> {sms} SMS
-                </span>
-              </>
-            ) : (
-              <span className="text-sm text-slate-400">No messages captured yet</span>
-            )}
-          </div>
+          {messages.length > 0 && (
+            <div className="flex gap-2 flex-wrap">
+              <span className="flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg" style={{ background: '#afd8ea22', color: '#0369a1', fontFamily: 'Josefin Sans' }}>
+                <Mail className="w-4 h-4" /> {emails} emails
+              </span>
+              <span className="flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg" style={{ background: '#fbab9822', color: '#c2410c', fontFamily: 'Josefin Sans' }}>
+                <MessageSquare className="w-4 h-4" /> {sms} SMS
+              </span>
+            </div>
+          )}
         </div>
       </div>
 

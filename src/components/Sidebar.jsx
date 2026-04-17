@@ -3,7 +3,7 @@ import { AlertCircle } from 'lucide-react'
 import { useCompetitors } from '../lib/useCompetitors'
 import { useMessages } from '../lib/useMessages'
 
-export default function Sidebar() {
+export default function Sidebar({ onClickLink }) {
   const location = useLocation()
   const { competitors } = useCompetitors()
   const { messages } = useMessages()
@@ -29,6 +29,7 @@ export default function Sidebar() {
             <Link
               key={c.id}
               to={`/competitor/${c.id}`}
+              onClick={onClickLink}
               className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors"
               style={{
                 background: active ? '#2d2520' : 'transparent',

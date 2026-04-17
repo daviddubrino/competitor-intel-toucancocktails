@@ -83,7 +83,7 @@ export default function AnalyticsPage() {
   if (loading) return <div className="p-6 text-slate-400">Loading...</div>
 
   return (
-    <div className="p-6 max-w-7xl">
+    <div className="p-4 md:p-6 max-w-7xl">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-slate-900">Analytics</h1>
         <p className="text-sm text-slate-500 mt-1">Patterns and insights from {messages.length} captured messages</p>

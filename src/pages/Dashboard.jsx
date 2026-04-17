@@ -62,7 +62,7 @@ export default function Dashboard() {
 
   if (source === 'live' && messages.length === 0) {
     return (
-      <div className="p-6 max-w-7xl">
+      <div className="p-4 md:p-6 max-w-7xl">
         <div className="mb-6">
           <h1 className="text-2xl font-bold" style={{ fontFamily: 'Oswald', color: '#2d2520', letterSpacing: '0.03em' }}>DASHBOARD</h1>
           <p className="text-sm mt-1" style={{ color: '#7C7C7C', fontFamily: 'Josefin Sans' }}>Cocktail Brands — Competitive Intelligence</p>
@@ -88,7 +88,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="p-6 max-w-7xl">
+    <div className="p-4 md:p-6 max-w-7xl">
       {/* Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold" style={{ fontFamily: 'Oswald', color: '#2d2520', letterSpacing: '0.03em' }}>DASHBOARD</h1>
@@ -96,7 +96,7 @@ export default function Dashboard() {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
         <StatsCard label="Total Messages" value={stats.total} icon={TrendingUp} color="#ed7979" />
         <StatsCard label="Emails Captured" value={stats.emails} icon={Mail} color="#afd8ea" />
         <StatsCard label="SMS Captured" value={stats.sms} icon={MessageSquare} color="#fbab98" />

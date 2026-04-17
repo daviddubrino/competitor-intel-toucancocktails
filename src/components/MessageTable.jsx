@@ -94,9 +94,9 @@ export default function MessageTable({ messages, showFilters = true, initialType
   return (
     <div className="flex flex-col gap-4">
       {showFilters && (
-        <div className="flex flex-wrap gap-3 items-center">
+        <div className="flex flex-wrap gap-2 md:gap-3 items-center">
           {/* Search */}
-          <div className="relative flex-1 min-w-48">
+          <div className="relative w-full md:flex-1 md:min-w-48">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
               type="text"
